@@ -1,13 +1,14 @@
-PARA CONFIGURAR O SERVIDOR PELA PRIMEIRA VEZ EM SEU COMPUTADOR, utilize os seguintes comandos:
+PARA CONFIGURAR O SERVIDOR PELA PRIMEIRA VEZ EM SEU COMPUTADOR, utilize os seguintes comandos
+no caminho "CampTruco/server-side/":
 
+    - npm install express;
+    - npm install cors;
+    - npm install mysql2;
 
-- npm install express;
-- npm install cors;
-- npm install mysql2;
+Após isso aparecerá uma pasta com nome de NODE_MODULES em seu diretório server-side e um package-lock também!
 
+Caso isso ocorra você pode estar iniciando o servidor com o seguinte comando via CMD
 
-após isso aparecerá uma pasta com nome de NODE_MODULES em seu diretório server-side e um package-lock também!
+    - node server.js
 
-caso isso ocorra você pode estar iniciando o servidor com o seguinte comando via CMD
-
-- node server.js
+Pronto agora é só entrar no client-side e abrir as paginas!

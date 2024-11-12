@@ -1,0 +1,16 @@
+{
+  "name": "camptruco",
+  "version": "1.0.0",
+  "description": "Campeonato de Truco feito pelos alunos da Proz Educação de Divinópolis.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "França, Gustavo, Eduardo e Rafael.",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3"
+  }
+}

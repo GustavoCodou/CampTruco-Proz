@@ -1,0 +1,13 @@
+PARA CONFIGURAR O SERVIDOR PELA PRIMEIRA VEZ EM SEU COMPUTADOR, utilize os seguintes comandos:
+
+
+- npm install express;
+- npm install cors;
+- npm install mysql2;
+
+
+após isso aparecerá uma pasta com nome de NODE_MODULES em seu diretório server-side e um package-lock também!
+
+caso isso ocorra você pode estar iniciando o servidor com o seguinte comando via CMD
+
+- node server.js

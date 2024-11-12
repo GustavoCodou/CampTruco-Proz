@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Arial', sans-serif;
+    background-color: hsl(0, 0%, 0%);
+    /* background-image: linear-gradient(45deg, #b91111 25%, transparent 25%), linear-gradient(-45deg, #271212 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #271212 75%), linear-gradient(-45deg, transparent 75%, #271212 75%); */
+    background-image: url("../assets/img/imagemfundo.jpg");
+    background-size: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    text-align: center;
+    padding: 2vh;
+    background-color: #000000c5;
+    margin-bottom: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo {
+    width: 140px;
+    height: 100px;
+}
+
+
+.placarmain {
+    display: flex;
+    justify-content: center;
+}
+
+.placar-container {
+    background-color: #ffffff;
+    color: black;
+    padding: 40px 400px;
+    border-radius: 16px;
+    border: 5px solid #000000;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.simbolo-paus {
+    font-size: 80px;
+    color: black;
+    position: absolute;
+}
+
+.topo-esquerdo {
+    top: 10px;
+    left: 10px;
+}
+
+.inferior-direito {
+    bottom: 10px;
+    right: 10px;
+}
+
+img {
+    width: 500PX;
+    height: 150PX;
+
+}
+
+
+.jogadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.dupla {
+    text-align: center;
+    flex: 1;
+    font-size: 20px;
+    color: #2f4f2f;
+    transition: transform 0.3s;
+}
+
+.dupla:hover {
+    transform: scale(1.05);
+}
+
+.resultado {
+    font-size: 36px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000000;
+    padding: 20px 100px;
+    border-radius: 8px;
+    width: 10px;
+    text-align: center;
+    margin: 0 20px;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #d62839;
+    transform: scale(1.05);
+}

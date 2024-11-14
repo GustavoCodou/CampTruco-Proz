@@ -9,19 +9,15 @@ const handleQuery = (res, query, params) => {
           console.log(err)
           return
       }
-      res.json({data: { results: results }});
-
-      if (results) {
-        console.log(results)
-      }
+      res.json({data: { success: true, results: results }});
   });
 };
 
 router.get('/', async (req, res) => {
   if (req.query) {
     handleQuery(res, "SELECT * FROM users WHERE nome = ?, senha = ?", [req.query.nome, req.query.senha])
-  } 
-  
+  }
+
   handleQuery(res, "SELECT * FROM users", [])
 });
 
@@ -40,17 +36,25 @@ router.delete('/:id', (req, res) => {
 
 router.post('/register', (req, res) => {
   const { email, nome, senha } = req.body;
-  console.log(email, nome, senha)
+  console.log("Api /register Used!", email, nome, senha);
 
   handleQuery(res, 'INSERT INTO users (email, nome, senha) VALUES (?, ?, ?)', [email, nome, senha])
 });
 
-router.get('/login', (req, res) => {
-  if (req.query) {
-    const { nome, senha } = req.query;
-    console.log(nome, senha)
-    handleQuery(res, 'SELECT * FROM users WHERE nome = ? AND senha = ?', [nome, senha])
-  }
+router.post('/login', (req, res) => {
+  const { nome, senha } = req.body;
+  console.log("Api /login Used!", nome, senha);
+
+  db.query('SELECT * FROM users WHERE nome = ? AND senha = ?', [nome, senha], (err, results) => {
+      if (err) {
+          return res.status(500).json({data: { success: false }, error: 'Erro ao executar a consulta!'});
+      }
+      if (results.length > 0) {
+          res.json({data: { success: true }});
+      } else {
+          res.json({data: { success: false }});
+      }
+  })
 });
 
 module.exports = router;

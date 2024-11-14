@@ -47,20 +47,23 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
             }
         }
     );
-
-
 });
-
 
 document.getElementById("SingupForm").addEventListener("submit", function(event) {
     event.preventDefault();
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const pass = document.getElementById("pass").value;
-    const errorMessage = document.getElementById("errorMessage");
+    const errorMessage2 = document.getElementById("errorMessage2");
 
     if (name === "" || pass === "" || email === "") {
-        errorMessage.textContent = "Por favor, preencha todos os campos!";
+        errorMessage2.textContent = "Por favor, preencha todos os campos!";
+        return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        errorMessage2.textContent = "Por favor, insira um email válido!";
         return;
     }
 
@@ -69,6 +72,31 @@ document.getElementById("SingupForm").addEventListener("submit", function(event)
         function(success) {
             if (success) {
                 navigate('Login');
+            } else {
+                errorMessage2.textContent = "Email já cadastrado!";
+            }
+        }
+    );
+});
+
+document.getElementById("admForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const Useradm = document.getElementById("Useradm").value;
+    const Passadm = document.getElementById("Passadm").value;
+    const errorMessage3 = document.getElementById("errorMessage3");
+
+    if (Useradm === "" || Passadm === "") {
+        errorMessage3.textContent = "Por favor, preencha todos os campos!";
+        return;
+    }
+
+    enviarDados('http://localhost:3001/api/admin/login', "POST", { nome: Useradm, senha: Passadm },
+        'Login realizado com sucesso!', 'Erro ao realizar o login!',
+        function(success) {
+            if (success) {
+                window.location.href = "teamPage.html";
+            } else {
+                errorMessage3.textContent = "Login ou senha incorretos!";
             }
         }
     );

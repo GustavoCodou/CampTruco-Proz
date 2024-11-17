@@ -37,7 +37,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         return;
     }
 
-    enviarDados('http://localhost:3001/api/users/login', "POST", { nome: username, senha: password },
+    enviarDados('http://localhost:3001/api/users/login', "POST", { username: username, password: password },
         'Login realizado com sucesso!', 'Erro ao realizar o login!',
         function(success) {
             if (success) {
@@ -67,7 +67,7 @@ document.getElementById("SingupForm").addEventListener("submit", function(event)
         return;
     }
 
-    enviarDados('http://localhost:3001/api/users/register', "POST", { email: email, nome: name, senha: pass },
+    enviarDados('http://localhost:3001/api/users/register', "POST", { email: email, username: name, password: pass },
         'Usuário cadastrado com sucesso!', 'Erro ao cadastrar o usuário!',
         function(success) {
             if (success) {
@@ -90,7 +90,7 @@ document.getElementById("admForm").addEventListener("submit", function(event) {
         return;
     }
 
-    enviarDados('http://localhost:3001/api/admin/login', "POST", { nome: Useradm, senha: Passadm },
+    enviarDados('http://localhost:3001/api/admin/login', "POST", { username: Useradm, password: Passadm },
         'Login realizado com sucesso!', 'Erro ao realizar o login!',
         function(success) {
             if (success) {

@@ -72,7 +72,7 @@ body {
     transform: scale(1.05);
 }
 
-.person {
+.player {
     padding: 8px;
     background-color: #222222;
     margin-bottom: 5px;
@@ -84,14 +84,38 @@ body {
     font-weight: bold;
 }
 
-.person.selected {
+.player.selected {
     background-color: #4682b4;
     color: white;
     transform: scale(1.05);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-#paired .person {
+#paired .player {
+    background-color: #444444;
+    color: #d32f2f;
+}
+
+.teams  {
+    padding: 8px;
+    background-color: #222222;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+.teams .selected {
+    background-color: #4682b4;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#paired .teams  {
     background-color: #444444;
     color: #d32f2f;
 }
@@ -105,7 +129,7 @@ body {
     margin-bottom: 10px;
 }
 
-#teamNameInput {
+#inputNomeTime {
     display: none;
     width: 200px;
     padding: 10px;
@@ -116,7 +140,7 @@ body {
     transition: border-color 0.3s;
 }
 
-#teamNameInput:focus {
+#inputNomeTime:focus {
     border-color: #d32f2f;
     outline: none;
 }

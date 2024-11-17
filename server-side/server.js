@@ -7,12 +7,12 @@ app.use(cors());
 app.use(express.json());
 
 const usersSrc = require('./src/users');
-const playersSrc = require('./src/players');
 const adminSrc = require('./src/admin');
+const teamsSrc = require('./src/teams');
 
 app.use('/api/users', usersSrc);
-app.use('/api/players', playersSrc);
 app.use('/api/admin', adminSrc);
+app.use('/api/teams', teamsSrc);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);

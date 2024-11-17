@@ -4,33 +4,52 @@ USE CampTruco;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    nome VARCHAR(100) NOT NULL,
-    senha VARCHAR(255) NOT NULL,
+	username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     isAdmin BOOLEAN DEFAULT FALSE
 );
 
-CREATE TABLE Equipes (
+CREATE TABLE teams (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nomeEquipe VARCHAR(100) NOT NULL UNIQUE
+    name VARCHAR(50) NOT NULL UNIQUE,
+    player1_id INT NOT NULL,
+    player2_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (player1_id) REFERENCES users(id),
+    FOREIGN KEY (player2_id) REFERENCES users(id)
 );
 
-CREATE TABLE players (
+CREATE TABLE matches (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nickname VARCHAR(255) NOT NULL,
-    userId INT NOT NULL,
-    equipeId INT NOT NULL,
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (equipeId) REFERENCES Equipes(id) ON DELETE CASCADE
+    team1_id INT NOT NULL,
+    team2_id INT NOT NULL,
+    status ENUM('in_progress', 'completed') DEFAULT 'in_progress',
+    winner_team_id INT DEFAULT NULL,
+    started_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ended_at TIMESTAMP NULL,
+    FOREIGN KEY (team1_id) REFERENCES teams(id),
+    FOREIGN KEY (team2_id) REFERENCES teams(id),
+    FOREIGN KEY (winner_team_id) REFERENCES teams(id)
 );
 
-CREATE TABLE matchs (
+CREATE TABLE scores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    equipeId INT NOT NULL,
-    round1 BOOLEAN,
-    round2 BOOLEAN,
-    round3 BOOLEAN,
-    FOREIGN KEY (equipeId) REFERENCES Equipes(id)
+    match_id INT NOT NULL,
+    team_id INT NOT NULL,
+    points INT NOT NULL,
+    recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (match_id) REFERENCES matches(id),
+    FOREIGN KEY (team_id) REFERENCES teams(id)
+);
+
+CREATE TABLE championships (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    winner_team_id INT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (winner_team_id) REFERENCES teams(id)
 );

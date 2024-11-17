@@ -4,26 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de Duplas - Truco Mineiro</title>
+    <title>Gestão de Times - Truco Mineiro</title>
     <link rel="stylesheet" href="css/styleTeam.css">
 </head>
 
 <body>
     <div class="container">
-        <div id="unpaired" class="rectangle">
-            <h3>Pessoas sem dupla</h3>
+        <div id="semTime" class="rectangle">
+            <h3>Pessoas sem time</h3>
         </div>
         <div class="buttons">
-            <button id="pairButton" class="button">→ Formar Dupla</button>
-            <button id="unpairButton" class="button">← Desfazer Dupla</button>
-            <button id="renameButton" class="button">Renomear Dupla</button>
-            <input type="text" id="teamNameInput" style="display: none;" placeholder="Nome da dupla">
-            <button id="confirmButton" class="button" style="display: none;">Confirmar</button>
-
+            <button id="formarTime" class="button">→ Formar Time</button>
+            <button id="desfazerTime" class="button">← Desfazer Time</button>
+            <button id="renomearTime" class="button">Renomear Time</button>
+            <input type="text" id="inputNomeTime" style="display: none;" placeholder="Nome do time">
+            <button id="confirmar" class="button" style="display: none;">Confirmar</button>
         </div>
 
-        <div id="paired" class="rectangle">
-            <h3>Duplas Formadas</h3>
+        <div id="teams" class="rectangle">
+            <h3>Times Formados</h3>
         </div>
     </div>
     <script src="js/scriptTeam.js"></script>

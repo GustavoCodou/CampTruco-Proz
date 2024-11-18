@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truco Mineiro - Placar Final</title>
+    <link rel="stylesheet" href="css/stylesGame.css">
+    <link rel="shortcut icon" type="imagex/png" href="/client-side/assets/img/Logo.svg">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div>
+                <img src="assets/img/Logo.svg" class="Logo" alt="Logo">
+            </div>
+            <div clas>
+                <a href="loginPage.html" class="button">Deslogar</a>
+            </div>
+        </div>
+
+        <div class="placarmain">
+            <div class="placar-container">
+                <span class="simbolo-paus topo-esquerdo">♠</span>
+                <!-- Símbolo no canto superior esquerdo -->
+                <img src="assets/img/PLACAR-31-10-2024.png" alt="">
+
+                <div class="jogadores">
+                    <div class="dupla">
+                        <p>zemegajogos</p>
+                        <p>bot-blocos</p>
+                        <button onclick="adicionarPontos('dupla1')">Adicionar 2 Pontos</button>
+                    </div>
+
+                    <div class="resultado">
+                        <p id="resultado">0 x 0</p>
+                    </div>
+
+                    <div class="dupla">
+                        <p>bot-cérebro</p>
+                        <p>bot-reciclado</p>
+                        <button onclick="adicionarPontos('dupla2')">Adicionar 2 Pontos</button>
+                    </div>
+                </div>
+
+                <button id="nova-partida" onclick="novaPartida()">NOVA PARTIDA</button>
+                <span class="simbolo-paus inferior-direito">♠</span>
+                <!-- Símbolo no canto inferior direito -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scriptGame.js"></script>
+
+</body>
+
+</html>

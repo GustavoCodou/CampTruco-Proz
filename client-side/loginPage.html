@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Truco Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styleLogin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" type="imagex/png" href="/client-side/assets/img/Logo.svg">
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div>
+        <img src="assets/img/LogoCamp.png" width="50px" class="Logo" alt="Logo">
+      </div>
+      <div clas>
+        <button class="buttonadm"> <i class="fa-solid fa-user-tie"></i> </button>
+      </div>
+    </div>
+
+    <div class="login">
+      <div class="login-container">
+        <div class="login-box">
+          <h1 class="titulopag">Truco Camp</h1>
+
+          <form id="loginForm" class="loginForm">
+            <img src="assets/img/LogoCamp.png" width="20px" alt="Ilustração de cartas" class="truco-image">
+
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" placeholder="Digite seu nome">
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" placeholder="Digite sua senha">
+
+            <p class="forgotPassword" id="forgotPassword">Esqueceu a Senha?</p>
+
+            <button type="submit">Entrar</button>
+            <p id="errorMessage" class="error-message"></p>
+
+            <p class="noAccounts" style="color: blanchedalmond;">Não tem uma conta? <a class="noAccount"
+                onclick="navigate('Register')">Cadastre-se aqui</a></p>
+          </form>
+
+          <form id="SingupForm" class="SingupForm" style="display: none;">
+            <div id="backBttn" class="backBttn" onclick="navigate('Login')"><i class="fa-solid fa-arrow-left"></i>
+              <div style="font-size: 13px; padding-left: 6px;">Voltar</div>
+            </div>
+
+            <p class="loginText">Cadastre-se:</p>
+
+            <label for="name">Nome de Usuário:</label>
+            <input type="text" id="name" placeholder="Digite seu nome">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Digite seu melhor email">
+
+            <label for="pass">Senha:</label>
+            <input type="password" id="pass" placeholder="Digite sua senha">
+
+            <button type="submit">Cadastrar</button>
+            <p id="errorMessage2" class="error-message2"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <dialog class="dialog">
+      <div class="close">
+        <p class="btnclose"><i class="fa-sharp fa-solid fa-circle-xmark"></i></p>
+      </div>
+
+      <div class="contentmodal">
+        <div class="modalheader">
+          <img src="assets/img/LogoCamp.png" class="" width="100px">
+          <h1 class="h1modal">Pagina de Login ADM</h1>
+        </div>
+
+        <form id="admForm" class="admForm">
+          <div class="modalbody>">
+            <div class="modal-flex">
+              <div class="backcardpaciente">
+                <div class="inputs">
+                  <label for="Useradm">Insira o ID de ADM:</label>
+                  <input type="text" class="Useradm" id="Useradm" placeholder="Digite seu Usuário:">
+
+                  <label for="Passadm">Insira a senha de acesso:</label>
+                  <input type="password" class="Passadm" id="Passadm" placeholder="Digite sua Senha:">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btnSubmit">Entrar</button>
+          <p id="errorMessage3" class="error-message3"></p>
+        </form>
+
+      </div>
+    </dialog>
+
+    <script src="js/scriptLogin.js"></script>
+  </div>
+</body>
+
+</html>
